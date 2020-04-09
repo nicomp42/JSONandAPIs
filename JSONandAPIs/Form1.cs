@@ -15,11 +15,6 @@ namespace JSONandAPIs
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            APIs.GSMNPInfo(txtInfo);
-        }
-
         private void btnGSMNPAlerts_Click(object sender, EventArgs e)
         {
             APIs.GSMNPAlerts(txtAlerts);
@@ -51,6 +46,11 @@ namespace JSONandAPIs
         {
             Fruit fruit = (Fruit) JSONSerializeTools.Deserialize<Fruit>(txtDeserializeFileName.Text);
             lblDeserializeInfo.Text = fruit.ToString();
+        }
+
+        private void btnGSMNPInfo_Click(object sender, EventArgs e)
+        {
+            APIs.GSMNPInfo(txtInfo);
         }
     }
 }

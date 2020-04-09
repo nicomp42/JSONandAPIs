@@ -66,7 +66,7 @@
             this.btnGSMNPInfo.TabIndex = 0;
             this.btnGSMNPInfo.Text = "Smokey Mountains National Park Info";
             this.btnGSMNPInfo.UseVisualStyleBackColor = true;
-            this.btnGSMNPInfo.Click += new System.EventHandler(this.button1_Click);
+            this.btnGSMNPInfo.Click += new System.EventHandler(this.btnGSMNPInfo_Click);
             // 
             // btnGSMNPAlerts
             // 
