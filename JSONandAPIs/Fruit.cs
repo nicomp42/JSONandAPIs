@@ -1,6 +1,6 @@
 ﻿/*
  * Bill Nicholson
- * nicholdw@ucmail.uc.edu
+ * nicholdw@ucmail.uc.edu 
  */
 using System;
 using System.Linq;
