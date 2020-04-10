@@ -15,19 +15,6 @@ namespace JSONandAPIs
 {
     class APIs
     {
-        /*
-        def get_alerts_from_smokey_mountains():
-    # Great Smokey Mountains code is grsm
-    response = requests.get('https://developer.nps.gov/api/v1/alerts?parkCode=grsm&api_key=pfJKDXPzTykVL73ehnPyY8pkDQLjfq5cz5LqCkl3')
-    json_string = response.content
-    parsed_json = json.loads(json_string)   # Now we have a python dictionary
-    total = int (parsed_json['total'])        # The number of alerts that were returned
-    for alert in parsed_json['data']:
-        print(alert)
-        print(alert['title'])
-        */
-
-
         public static void GSMNPAlerts(TextBox txtAlerts)
         {
             var client = new WebClient();
@@ -38,7 +25,7 @@ namespace JSONandAPIs
 
             JToken dataToken = json.GetValue("data");       // There's a thing called "data" in the JSON data
             Console.WriteLine(dataToken[0]);                // The first element in "data". Everything inside the outer {} delimiters of the "data" item because there's only one item
-            Console.WriteLine(dataToken[0]["title"]);       // There's a thing called "title" inn the JSON data
+            Console.WriteLine(dataToken[0]["title"]);       // There's a thing called "title" in the JSON data
             String description = dataToken[0]["description"].ToString();
             txtAlerts.Text = description;
 
