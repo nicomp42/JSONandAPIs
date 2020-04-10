@@ -36,13 +36,12 @@ namespace JSONandAPIs
             JObject json = JObject.Parse(jsonString);      // NewtonSoft !
             Console.WriteLine(json);                        // All the JSON. Note there are "total", "data", "limit", "start" elements here
 
-            JToken dataToken = json.GetValue("data");       // Strongly typed because there's a thing called "data" in the JSON data
+            JToken dataToken = json.GetValue("data");       // There's a thing called "data" in the JSON data
             Console.WriteLine(dataToken[0]);                // The first element in "data". Everything inside the outer {} delimiters of the "data" item because there's only one item
-            Console.WriteLine(dataToken[0]["title"]);       // Strongly typed again
+            Console.WriteLine(dataToken[0]["title"]);       // There's a thing called "title" inn the JSON data
             String description = dataToken[0]["description"].ToString();
             txtAlerts.Text = description;
 
-            //            var myDictionary = JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonString);     // NewtonSoft!
             var myDictionary = deserializeToDictionary(jsonString);
             Console.WriteLine("Dumping the JSON:");
             foreach (KeyValuePair<string, object> entry in myDictionary) {
@@ -62,7 +61,7 @@ namespace JSONandAPIs
             //          https://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_Linq_JObject.htm
             JObject json = JObject.Parse(jsonString);      // NewtonSoft !
             // Let's get the phone numbers. There is only one but we shouldn't assume that will always be the case
-            JToken dataToken = json.GetValue("data");       // Strongly typed because there's a thing called "data" in the JSON data
+            JToken dataToken = json.GetValue("data");       // There's a thing called "data" in the JSON data
             JToken contactsToken = dataToken[0]["contacts"];
             JToken phoneNumbersToken = contactsToken["phoneNumbers"];
 
